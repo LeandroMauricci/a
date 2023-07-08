@@ -35,9 +35,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnListarEstudiantes = new javax.swing.JButton();
         menuPrincipal = new javax.swing.JMenuBar();
-        mnuiRegistroAsignaturas = new javax.swing.JMenu();
+        mnuRegistros = new javax.swing.JMenu();
         mnuiAgregarEstudiante = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mnuiRegistroAsignaturas = new javax.swing.JMenuItem();
+        mnuiRegistroNotas = new javax.swing.JMenuItem();
         mnuListados = new javax.swing.JMenu();
         mnuiListarEstudiantes = new javax.swing.JMenuItem();
         mnuiListaDatosE = new javax.swing.JMenuItem();
@@ -67,10 +68,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         menuPrincipal.setForeground(new java.awt.Color(0, 20, 2));
 
-        mnuiRegistroAsignaturas.setMnemonic('P');
-        mnuiRegistroAsignaturas.setText("Registrar");
-        mnuiRegistroAsignaturas.setToolTipText("");
-        mnuiRegistroAsignaturas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mnuRegistros.setMnemonic('P');
+        mnuRegistros.setText("Registrar");
+        mnuRegistros.setToolTipText("");
+        mnuRegistros.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         mnuiAgregarEstudiante.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         mnuiAgregarEstudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/add_file.gif"))); // NOI18N
@@ -80,19 +81,29 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 mnuiAgregarEstudianteActionPerformed(evt);
             }
         });
-        mnuiRegistroAsignaturas.add(mnuiAgregarEstudiante);
+        mnuRegistros.add(mnuiAgregarEstudiante);
 
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/add_file.gif"))); // NOI18N
-        jMenuItem1.setText("Registrar asignaturas");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        mnuiRegistroAsignaturas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        mnuiRegistroAsignaturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/add_file.gif"))); // NOI18N
+        mnuiRegistroAsignaturas.setText("Registrar asignaturas");
+        mnuiRegistroAsignaturas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                mnuiRegistroAsignaturasActionPerformed(evt);
             }
         });
-        mnuiRegistroAsignaturas.add(jMenuItem1);
+        mnuRegistros.add(mnuiRegistroAsignaturas);
 
-        menuPrincipal.add(mnuiRegistroAsignaturas);
+        mnuiRegistroNotas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        mnuiRegistroNotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/add_file.gif"))); // NOI18N
+        mnuiRegistroNotas.setText("Registrar notas");
+        mnuiRegistroNotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuiRegistroNotasActionPerformed(evt);
+            }
+        });
+        mnuRegistros.add(mnuiRegistroNotas);
+
+        menuPrincipal.add(mnuRegistros);
 
         mnuListados.setMnemonic('L');
         mnuListados.setText("Listados");
@@ -174,7 +185,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         frmListadoEstudiantes.setVisible(true);
     }//GEN-LAST:event_mnuiListarEstudiantesActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void mnuiRegistroAsignaturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiRegistroAsignaturasActionPerformed
         String input = JOptionPane.showInputDialog(
         null, 
         "Ingresar código de estudiante:",
@@ -220,7 +231,7 @@ try {
                 "Verificación de datos",
                 JOptionPane.ERROR_MESSAGE);
 }
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_mnuiRegistroAsignaturasActionPerformed
 
     private void mnuiListaDatosEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiListaDatosEActionPerformed
         String input = JOptionPane.showInputDialog(
@@ -267,8 +278,14 @@ try {
     }//GEN-LAST:event_mnuiListaDatosEActionPerformed
 
     private void mnuiListaDatosAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiListaDatosAActionPerformed
-        
+        FrmListadoDatosAsignatura frmListadoDatosAsignatura = new FrmListadoDatosAsignatura(this);
+        frmListadoDatosAsignatura.setVisible(true);
     }//GEN-LAST:event_mnuiListaDatosAActionPerformed
+
+    private void mnuiRegistroNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiRegistroNotasActionPerformed
+        FrmConfirmarRegistroNotas frmConfirmarRegistroNotas = new FrmConfirmarRegistroNotas(this);
+        frmConfirmarRegistroNotas.setVisible(true);
+    }//GEN-LAST:event_mnuiRegistroNotasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,14 +332,15 @@ try {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnListarEstudiantes;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuBar menuPrincipal;
     private javax.swing.JMenu mnuListados;
+    private javax.swing.JMenu mnuRegistros;
     private javax.swing.JMenuItem mnuiAgregarEstudiante;
     private javax.swing.JMenuItem mnuiListaDatosA;
     private javax.swing.JMenuItem mnuiListaDatosE;
     private javax.swing.JMenuItem mnuiListarEstudiantes;
-    private javax.swing.JMenu mnuiRegistroAsignaturas;
+    private javax.swing.JMenuItem mnuiRegistroAsignaturas;
+    private javax.swing.JMenuItem mnuiRegistroNotas;
     // End of variables declaration//GEN-END:variables
 
     private BLEstudiantes blEstudiantes;
