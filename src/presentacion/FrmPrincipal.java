@@ -40,8 +40,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         mnuListados = new javax.swing.JMenu();
         mnuiListarEstudiantes = new javax.swing.JMenuItem();
-        mnuiListaDatos = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mnuiListaDatosE = new javax.swing.JMenuItem();
+        mnuiListaDatosA = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de estudiantes");
@@ -107,23 +107,23 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         mnuListados.add(mnuiListarEstudiantes);
 
-        mnuiListaDatos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        mnuiListaDatos.setText("Lista de datos estudiante");
-        mnuiListaDatos.addActionListener(new java.awt.event.ActionListener() {
+        mnuiListaDatosE.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        mnuiListaDatosE.setText("Lista de datos estudiante");
+        mnuiListaDatosE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuiListaDatosActionPerformed(evt);
+                mnuiListaDatosEActionPerformed(evt);
             }
         });
-        mnuListados.add(mnuiListaDatos);
+        mnuListados.add(mnuiListaDatosE);
 
-        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem2.setText("Lista de datos asignatura");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mnuiListaDatosA.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        mnuiListaDatosA.setText("Lista de datos asignatura");
+        mnuiListaDatosA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mnuiListaDatosAActionPerformed(evt);
             }
         });
-        mnuListados.add(jMenuItem2);
+        mnuListados.add(mnuiListaDatosA);
 
         menuPrincipal.add(mnuListados);
 
@@ -222,7 +222,7 @@ try {
 }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void mnuiListaDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiListaDatosActionPerformed
+    private void mnuiListaDatosEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiListaDatosEActionPerformed
         String input = JOptionPane.showInputDialog(
         null, 
         "Ingresar código:",
@@ -264,12 +264,11 @@ try {
                 "Verificación de datos",
                 JOptionPane.ERROR_MESSAGE);
 }
-    }//GEN-LAST:event_mnuiListaDatosActionPerformed
+    }//GEN-LAST:event_mnuiListaDatosEActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        FrmListadoDatosAsignatura frmListadoDatosAsignatura = new FrmListadoDatosAsignatura(this);
-        frmListadoDatosAsignatura.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void mnuiListaDatosAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiListaDatosAActionPerformed
+        
+    }//GEN-LAST:event_mnuiListaDatosAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,11 +316,11 @@ try {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnListarEstudiantes;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuBar menuPrincipal;
     private javax.swing.JMenu mnuListados;
     private javax.swing.JMenuItem mnuiAgregarEstudiante;
-    private javax.swing.JMenuItem mnuiListaDatos;
+    private javax.swing.JMenuItem mnuiListaDatosA;
+    private javax.swing.JMenuItem mnuiListaDatosE;
     private javax.swing.JMenuItem mnuiListarEstudiantes;
     private javax.swing.JMenu mnuiRegistroAsignaturas;
     // End of variables declaration//GEN-END:variables
