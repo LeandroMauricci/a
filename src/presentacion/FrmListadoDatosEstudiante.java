@@ -114,7 +114,7 @@ public class FrmListadoDatosEstudiante extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblDatos);
 
         lblTexto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTexto.setText("Los cursos en lo que te registraste son en tu última matrícula son:");
+        lblTexto.setText("Los cursos en lo que te registraste en tu última matrícula son:");
 
         tblAsignaturas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -174,7 +174,9 @@ public class FrmListadoDatosEstudiante extends javax.swing.JFrame {
         if(BLEstudiantes.getNumRegistros()!=0)
             llenarTabla1();
         else
-            JOptionPane.showMessageDialog(this, "El archivo no tiene datos.", "Resultado", 2);        // TODO add your handling code here:
+            JOptionPane.showMessageDialog(this, 
+                    "El archivo no tiene datos.", 
+                    "Resultado", 2);        
     }//GEN-LAST:event_formWindowOpened
 
     /**
